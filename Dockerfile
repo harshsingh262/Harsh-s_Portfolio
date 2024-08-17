@@ -1,3 +1,3 @@
-FROM nginx-alpine
+FROM nginx:alpine
 COPY . /usr/share/nginx/html
 EXPOSE 8083
