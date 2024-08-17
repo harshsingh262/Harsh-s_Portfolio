@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stages("Cleanu"){
+        stage("Cleanup"){
             steps{
                 sh 'docker images -q my_project | xargs -r rmi -f'
             }
