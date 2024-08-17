@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Build_Image"){
             steps{
-                sh 'docker build -t my_website .'
+                sh 'docker build -t my_project .'
             }
         }
         stage("Production"){
