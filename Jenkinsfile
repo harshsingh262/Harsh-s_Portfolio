@@ -7,6 +7,8 @@ pipeline{
                     docker ps -a --filter "ancestor=my_project" --format "{{.ID}}" | xargs docker stop
                     docker images -q my_project | xargs -r docker rmi -f
                 '''
+            }
+        }
         stage("Build_Image"){
             steps{
                 sh 'docker build -t my_project .'
