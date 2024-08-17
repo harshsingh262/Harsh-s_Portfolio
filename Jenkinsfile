@@ -19,5 +19,10 @@ pipeline{
                 sh 'docker run -it -d -p 8084:80 my_project'
             }
         }
+         stage("Testimg"){
+            steps{
+                sh 'docker ps  --filter "ancestor=my_project" --format "{{.ID}}" | xargs docker logs'
+            }
+        }
     }
 }
