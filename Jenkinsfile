@@ -16,7 +16,7 @@ pipeline{
         }
         stage("Production"){
             steps{
-                sh 'docker run -it -d -p 83:80 my_project'
+                sh 'docker run -it -d -p 8083:8080 my_project'
             }
         }
     }
