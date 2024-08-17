@@ -1,6 +1,10 @@
 pipeline{
     agent any
     stages{
+        stages("Cleanu"){
+            steps{
+                sh 'docker images -q my_project | xargs -r rmi -f'
+            }
         stage("Build_Image"){
             steps{
                 sh 'docker build -t my_project .'
